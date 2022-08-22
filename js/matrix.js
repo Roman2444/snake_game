@@ -27,9 +27,8 @@ class Matrix{
         this.elem.children[num].className = val;
     }
     
-    /* пересчитать № строки и № столбца в i */ 
+
     _calcNum(x, y){
-        /* НЕПРАВИЛЬНО */
-        return Math.floor(Math.random() * 400);
+        return  y*20 + x  
     }
 }
