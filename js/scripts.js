@@ -7,7 +7,7 @@ window.onload = function (e) {
     matrix.setCell(4, 5, 'fruit');
     matrix.setCell(5, 8, 'fruit');
     
-    var snake = new Snake(matrix, 6, 6, 'left');
+    var snake = new Snake(matrix, 6, 6, 'right');
     snake.show();
 
     this.document.addEventListener('keydown', function(e) {
@@ -23,8 +23,14 @@ window.onload = function (e) {
         }  
     })
 
-    setInterval(() => {
+   let timer = setInterval(() => {
         snake.move();
+
+    if(!snake.alive) {
+        clearInterval(timer);
+        alert('Game over')
+    }
+
     }, 500);
 
 
