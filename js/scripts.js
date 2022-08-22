@@ -17,7 +17,6 @@ window.onload = function (e) {
         console.log(e.key)
         if (e.key === 'ArrowUp'){
             snake.course='up'
-            console.log(snake)
         } else if (e.key === 'ArrowDown'){
             snake.course='down'
         } else if (e.key === 'ArrowRight'){

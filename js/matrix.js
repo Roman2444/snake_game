@@ -3,13 +3,15 @@ class Matrix{
     /* 
      * на дз - M x N
      * */
-    constructor(elem){
+    constructor(elem, rows=20, cols=20){
         this.elem = elem;
         this.cells = [];
+        this.rows = rows
+        this.cols = cols
     }
     
     create(){
-        for(let i = 0; i < 400; i++){
+        for(let i = 0; i <  this.rows * this.cols ; i++){
             let div = document.createElement('div');
             this.elem.appendChild(div);
             this.cells[i] = '';
@@ -28,6 +30,6 @@ class Matrix{
     }
     
     _calcNum(x, y){
-        return  y*20 + x  
+        return  (y-1) * 20 + x -1 
     }
 }
