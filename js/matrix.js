@@ -16,6 +16,7 @@ class Matrix{
             this.elem.appendChild(div);
             this.cells[i] = '';
         }
+        this.elem.style.width = (this.cols * 20) + 'px'
     }
     
     getCell(x, y){
@@ -30,6 +31,6 @@ class Matrix{
     }
     
     _calcNum(x, y){
-        return  (y-1) * 20 + x -1 
+        return  (y-1) * this.cols + x -1 
     }
 }

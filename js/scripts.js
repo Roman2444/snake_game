@@ -1,7 +1,7 @@
 window.onload = function (e) {
 
     var div = document.querySelector('.fields');
-    var matrix = new Matrix(div);
+    var matrix = new Matrix(div, 100, 100);
     matrix.create();
     
     matrix.setCell(4, 5, 'fruit');
@@ -11,7 +11,7 @@ window.onload = function (e) {
     
     setInterval(() => {
         snake.move();
-    }, 500);
+    }, 100);
 
     this.document.addEventListener('keydown', function(e) {
         console.log(e.key)
