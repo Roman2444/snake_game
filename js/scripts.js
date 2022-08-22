@@ -1,17 +1,14 @@
 window.onload = function (e) {
 
     var div = document.querySelector('.fields');
-    var matrix = new Matrix(div, 100, 100);
+    var matrix = new Matrix(div, 50, 50);
     matrix.create();
     
     matrix.setCell(4, 5, 'fruit');
+    matrix.setCell(5, 8, 'fruit');
     
-    var snake = new Snake(matrix, 5, 6, 'left');
+    var snake = new Snake(matrix, 6, 6, 'left');
     snake.show();
-    
-    setInterval(() => {
-        snake.move();
-    }, 100);
 
     this.document.addEventListener('keydown', function(e) {
         console.log(e.key)
@@ -25,5 +22,10 @@ window.onload = function (e) {
             snake.course='left'
         }  
     })
+
+    setInterval(() => {
+        snake.move();
+    }, 500);
+
 
 }

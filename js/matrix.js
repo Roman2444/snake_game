@@ -30,7 +30,7 @@ class Matrix{
         this.elem.children[num].className = val;
     }
     
-    _calcNum(x, y){
-        return  (y-1) * this.cols + x -1 
+    _calcNum(x, y) {
+        return  (y - 1) * this.cols + x - 1 
     }
 }

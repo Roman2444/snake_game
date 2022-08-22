@@ -5,6 +5,7 @@ class Snake{
         this.x = x;
         this.y = y;
         this.course = course;
+        this.alive = true;
     }
     
     show(){
@@ -12,7 +13,15 @@ class Snake{
     }
     
     move(){
-        this.matrix.setCell(this.x, this.y, '');
+        if(!this.alive){
+            return
+        }
+
+
+        var lastX = this.x
+        var lastY = this.y
+
+
         console.log(this.x, this.y)
         // if(this.y > this.rows){
         //     this.y=1
@@ -42,9 +51,20 @@ class Snake{
                 this.y--;
                 break;
         }
-        
-        
+
+        if (!this._checkAlive()){
+            this.alive = false
+            return;
+        }
+
+        this.matrix.setCell(lastX, lastY, '');
         this.matrix.setCell(this.x, this.y, 'snake');
+    }
+
+// проверка на стену
+    _checkAlive() {
+        return this.x > 0 && this.x <= this.matrix.cols &
+               this.y > 0 && this.y <= this.matrix.rows;
     }
 
 }
