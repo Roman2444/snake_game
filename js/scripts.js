@@ -6,7 +6,7 @@ window.onload = function (e) {
     
     matrix.setCell(4, 5, 'fruit');
     
-    var snake = new Snake(matrix, 5, 5, 'right');
+    var snake = new Snake(matrix, 5, 6, 'up');
     snake.show();
     
     setInterval(() => {

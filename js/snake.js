@@ -18,7 +18,18 @@ class Snake{
             case 'right':
                 this.x++;
                 break;
+            case 'left':
+                this.x--;
+                break;
+            case 'down':
+                this.y++;
+                break;
+            case 'up':
+                this.y--;
+                break;
         }
+        
+
         
         this.matrix.setCell(this.x, this.y, 'snake');
     }
