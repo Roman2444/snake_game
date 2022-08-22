@@ -27,7 +27,6 @@ class Matrix{
         this.elem.children[num].className = val;
     }
     
-
     _calcNum(x, y){
         return  y*20 + x  
     }
