@@ -12,26 +12,51 @@ window.onload = function (e) {
     
     var snake = new Snake(matrix, [[5, 5], [4, 5], [3, 5]], 'right');
     snake.show();
+
+    this.document.addEventListener('keydown', function(e) {
+        snake.course = e.key
+        let lastCourse = snake.course
+        console.log(lastCourse)
+        console.log(e.key)
+        if (e.key === 'ArrowUp' && lastCourse !=='down'){
+            snake.course='up'
+        } else if (e.key === 'ArrowDown' && lastCourse !=='up'){
+            snake.course='down'
+        } else if (e.key === 'ArrowRight' && lastCourse !=='left'){
+            snake.course='right'
+        } else if (e.key === 'ArrowLeft' && lastCourse !=='right' ){
+            snake.course='left'
+        }  
+    })
+
     
-    document.onkeydown = function(e){
-        snake.course = e.keyCode;
-        
-        /* добавить защиту от смены курса на противоположный */
-        switch(e.keyCode){
-            case 37:
-                snake.course = 'left';
-                break;
-            case 38:
-                snake.course = 'up';
-                break;
-            case 39:
-                snake.course = 'right';
-                break;
-            case 40:
-                snake.course = 'down';
-                break;
-        }
-    }
+    // this.document.addEventListener('keydown', function(e){
+    //     // snake.course = e.key;
+    //     let lastCourse = snake.course
+    //     console.log(snake.course)
+    //     /* добавить защиту от смены курса на противоположный */
+    //     // switch(e.key){
+    //     //     case 'ArrowLeft':
+    //     //         if(lastCourse!='right){ 
+    //     //         snake.course = 'left';
+    //     //         console.log(snake.course)
+    //     //         break};
+    //     //     case 'ArrowUp':
+    //     //         snake.course = 'up';
+    //     //         break;
+    //     //     case 'ArrowRight':
+    //     //         snake.course = 'right';
+    //     //         console.log(snake.course)
+    //     //         break;
+    //     //     case 'ArrowDown':
+    //     //         snake.course = 'down';
+    //     //         break;
+
+
+
+
+    //     }
+    // })
     
     let timer = setInterval(() => {
         snake.move();
