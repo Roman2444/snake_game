@@ -34,14 +34,20 @@ class Snake extends Elem{
             return;
         }
         
-        /* getCell 
-         *  фрукт - покушали, хвост не отпал
-         *  стена - gameover
-         *  змея - gameoverстена - gameover
-         * */
-        
-        var tail = this.cords.pop();
-        this.matrix.setCell(tail[0], tail[1], '');
+
+        let valueHead = this.matrix.getCell(head[0], head[1])
+        // console.log(valueHead)
+
+        if(valueHead!=='fruit'){
+            var tail = this.cords.pop();
+            this.matrix.setCell(tail[0], tail[1], '');  
+        }  
+        if(valueHead==='snake' || valueHead==='wall' ){
+            this.alive = false;
+            return;
+        }
+
+
         
         this.cords.unshift(head);
         this.matrix.setCell(head[0], head[1], 'snake');

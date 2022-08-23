@@ -35,7 +35,7 @@ class Matrix{
         this.elem.children[num].setAttribute('data-game', val);
     }
     
-    /* пересчитать № строки и № столбца в i */ 
+
     _calcNum(x, y){
         return (y - 1) * this.cols + x - 1;
     }
