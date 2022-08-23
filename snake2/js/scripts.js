@@ -3,8 +3,9 @@ window.onload = function (e) {
     var div = document.querySelector('.fields');
     var matrix = new Matrix(div, 15, 15);
     matrix.create();
+   
     
-    var fruit = new Fruit(matrix, [[1, 4]]);
+    var fruit = new Fruit(matrix, [[1, 4], [8, 9]]);
     fruit.show();
     
     var wall = new Wall(matrix, [[3, 7], [4, 7], [5, 7], [6, 7]]);
@@ -14,10 +15,8 @@ window.onload = function (e) {
     snake.show();
 
     this.document.addEventListener('keydown', function(e) {
-        snake.course = e.key
+    
         let lastCourse = snake.course
-        console.log(lastCourse)
-        console.log(e.key)
         if (e.key === 'ArrowUp' && lastCourse !=='down'){
             snake.course='up'
         } else if (e.key === 'ArrowDown' && lastCourse !=='up'){
@@ -30,6 +29,7 @@ window.onload = function (e) {
     })
 
     
+    // почему-то не получилась проверка со switch case?????
     // this.document.addEventListener('keydown', function(e){
     //     // snake.course = e.key;
     //     let lastCourse = snake.course
@@ -51,10 +51,6 @@ window.onload = function (e) {
     //     //     case 'ArrowDown':
     //     //         snake.course = 'down';
     //     //         break;
-
-
-
-
     //     }
     // })
     
@@ -71,4 +67,18 @@ window.onload = function (e) {
          * 
          * */
     }, 500);
+
+    
+        let coins = 0
+        // if(this.valueHead.call(snake)=='fruit'){
+        //     coins++
+        // }
+      
+    
+        let table = document.createElement('div');
+        table.setAttribute('data-table', 'table')
+        document.body.append(table);
+        table.innerHTML = `СЧЁТ   ${coins} `
+        
+
 }

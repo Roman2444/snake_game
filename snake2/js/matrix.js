@@ -22,8 +22,17 @@ class Matrix{
             this.elem.appendChild(div);
             this.cells[i] = '';
         }
+
     }
-    
+    createTable(){
+    let coins = 0
+
+    let table = document.createElement('div');
+    table.setAttribute('data-table', 'table')
+    document.body.append(table);
+    table.innerHTML = `СЧЁТ   ${coins} `
+    }
+
     getCell(x, y){
         let num = this._calcNum(x, y);
         return this.cells[num];
