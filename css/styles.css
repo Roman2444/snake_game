@@ -3,8 +3,8 @@ html, body{
 }
 
 .fields{
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
+    /* border-left: 1px solid #000; */
+    border: 1px solid #000;
     width: 400px;
     margin: 20px auto;
     overflow: hidden;
@@ -14,15 +14,18 @@ html, body{
     width: 20px;
     height: 20px;
     box-sizing: border-box;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
+    /* border-right: 1px solid #000; 
+    border-bottom: 1px solid #000; */
     float: left;
 }
 
 .fruit{
     background: #f00;
+    border-radius: 50%;
 }
 
 .snake{
-    background: #ff0;
+    background: rgb(255, 94, 0);
+    border-radius : 20%;
+
 }

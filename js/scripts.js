@@ -1,7 +1,7 @@
 window.onload = function (e) {
 
     var div = document.querySelector('.fields');
-    var matrix = new Matrix(div, 50, 50);
+    var matrix = new Matrix(div, 30, 30);
     matrix.create();
     
     matrix.setCell(4, 5, 'fruit');

@@ -23,18 +23,7 @@ class Snake{
 
 
         console.log(this.x, this.y)
-        // if(this.y > this.rows){
-        //     this.y=1
-        // } 
-        // else if(this.y < 1){
-        //     this.y = this.rows
-        // }
-        // if(this.x > this.cols){
-        //     this.x=1
-        // } 
-        // else if(this.x < 1){
-        //     this.x = this.cols
-        // }
+
 
 
         switch(this.course){
