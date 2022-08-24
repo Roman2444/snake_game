@@ -5,9 +5,9 @@ class Snake{
         this.x = x;
         this.y = y;
         this.course = course;
-        this.newCourse = course;
+    
         this.alive = true;
-        this.eaten = false
+  
     }
     
     show(){
@@ -18,8 +18,6 @@ class Snake{
         if(!this.alive){
             return
         }
-        this.eaten = false;
-        this.course = this.newCourse;
         
         var lastX = this.x
         var lastY = this.y
