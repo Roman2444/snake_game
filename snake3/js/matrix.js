@@ -22,9 +22,8 @@ class Matrix{
             this.elem.appendChild(div);
             this.cells[i] = '';
         }
-
     }
-
+    
     getCell(x, y){
         let num = this._calcNum(x, y);
         return this.cells[num];
@@ -36,7 +35,7 @@ class Matrix{
         this.elem.children[num].setAttribute('data-game', val);
     }
     
-
+    /* пересчитать № строки и № столбца в i */ 
     _calcNum(x, y){
         return (y - 1) * this.cols + x - 1;
     }
